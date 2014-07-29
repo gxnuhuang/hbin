@@ -1,0 +1,1 @@
+make O=/home/gxnuhuang/kernel_am335x_06/out ARCH=arm CROSS_COMPILE=arm-arago-linux-gnueabi- uImage

@@ -1,0 +1,18 @@
+#！/bin/bash
+echo "hzq:start git config........."
+#配置用户信息
+git config --global user.name "gxnuhuang"
+git config --global user.email "343862618@qq.com"
+#颜色配置
+#git diff要显示的颜色
+git config --global color.diff auto 
+#git status 要显示的颜色
+git config --global color.status auto 
+#git branch 要显示的颜色
+git config --global color.branch auto 
+#git log 要显示的颜色
+git config --global color.log auto 
+#忽略文件权限
+git config --global core.filemode false
+#git config --global core.fileMode  false
+echo "hzq:done  git config........."

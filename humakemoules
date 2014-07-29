@@ -1,0 +1,1 @@
+make O=/home/gxnuhuang/ubuntu_kernel/linux-source-3.8.0/out modules
