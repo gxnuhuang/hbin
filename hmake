@@ -1,3 +1,4 @@
 echo "hzq:$1"
+#arm-tool = arm-arago-linux-gnueabi-
 make O=$(pwd)/out ARCH=arm CROSS_COMPILE=arm-arago-linux-gnueabi- $1
 
