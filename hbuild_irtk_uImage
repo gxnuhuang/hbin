@@ -1,0 +1,18 @@
+#!/bin/sh
+out_dir=$(pwd)
+arm_tool="arm-linux-gnueabihf-"
+
+echo "$out_dir $arm_tool"
+
+if [ -d $out_dir/out ]
+then
+#echo "file exits"
+echo 	".........build dir is $out_dir tool is $arm_tool .............."
+	make O=$out_dir/out ARCH=arm CROSS_COMPILE=$arm_tool uImage
+else
+#	echo "mno"
+	mkdir -p $out_dir/out
+	make O=$out_dir/out ARCH=arm CROSS_COMPILE=$arm_tool uImage
+fi
+
+
