@@ -1,2 +1,2 @@
 #echo "hsie test"
-du -h --max-depth=$1 $2
+du -a -h --max-depth=$1 $2
