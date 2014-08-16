@@ -1,18 +1,32 @@
 #!/bin/bash
-out_dir=$(pwd)
-arm_tool="arm-linux-gnueabihf-"
+echo "hzq: input Parameters is $1"
 
-echo "$out_dir $arm_tool"
+OUT_DIR=$(pwd)/out
+ARM_TOOL="arm-linux-gnueabihf-"
 
-if [ -d $out_dir/out ]
+if [ -d $OUT_DIR ]
 then
-#echo "file exits"
-echo 	".........build dir is $out_dir tool is $arm_tool .............."
-	make O=$out_dir/out ARCH=arm CROSS_COMPILE=$arm_tool $1
+
+echo -e "\033[41;20m####################################################################################\033[0m"
+echo ""
+echo -e "\033[41;20mhzq:$OUT_DIR has exist ! it will be Compiled directly \033[0m"
+echo -e "\033[41;20mhzq:cmd is make O=$OUT_DIR ARCH=arm CROSS_COMPILE=$ARM_TOOL $1 \033[0m"
+echo ""
+echo -e "\033[41;20m####################################################################################\033[0m"
+echo ""
+
+make O=$OUT_DIR ARCH=arm CROSS_COMPILE=$ARM_TOOL $1 -j8
+
 else
-#	echo "mno"
-	mkdir -p $out_dir/out
-	make O=$out_dir/out ARCH=arm CROSS_COMPILE=$arm_tool $1
+
+echo ""
+echo -e "\033[41;20mwarring:has not  \"$OUT_DIR\" !!!!\033[0m"
+echo -e "\033[41;20mNow will creat  \"$OUT_DIR\" and Compiled directly!!!\033[0m"
+echo -e "\033[41;20mhzq:cmd is make O=$OUT_DIR ARCH=arm CROSS_COMPILE=$ARM_TOOL $1 \033[0m"
+echo ""
+
+mkdir -p $OUT_DIR
+make O=$OUT_DIR ARCH=arm CROSS_COMPILE=$ARM_TOOL $1 -j8
 fi
 
 
