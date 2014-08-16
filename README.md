@@ -9,3 +9,5 @@ hbin
 complete -W 'distclean mrproper clean am335x_evm_defconfig menuconfig uImage modules' hmake hbuild_irtk 
 
 hmake与hbuild_irtk支持是否在out目录编译
+
+添加hchange改变档案的拥有者与群组属性命令。complete -W 'gxnuhuang root ' hchange加入到/home/gxnuhuang/.bashrc中

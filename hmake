@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "hzq: input Parameters is $@"
+echo -e "\033[41;20mhzq: input Parameters is $@\033[0m"
 
 OUT_DIR=$(pwd)/out
 ARM_TOOL="arm-arago-linux-gnueabi-"

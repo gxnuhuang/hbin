@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "you input paramter is $@"
+sudo chown $1 $2 -R
+sudo chgrp $1 $2 -R
