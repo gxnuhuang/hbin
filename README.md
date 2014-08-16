@@ -8,3 +8,4 @@ hbin
 使hmake与hbuild_irtk支持命令补全功能，方法：在/home/gxnuhuang/.bashrc中加入
 complete -W 'distclean mrproper clean am335x_evm_defconfig menuconfig uImage modules' hmake hbuild_irtk 
 
+hmake与hbuild_irtk支持是否在out目录编译
