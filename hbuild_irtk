@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 out_dir=$(pwd)
 arm_tool="arm-linux-gnueabihf-"
 

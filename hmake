@@ -1,4 +1,22 @@
-echo "hzq:$1"
-#arm-tool = arm-arago-linux-gnueabi-
-make O=$(pwd)/out ARCH=arm CROSS_COMPILE=arm-arago-linux-gnueabi- $1
+#!/bin/bash
+#echo "hzq: input Parameters is $1"
+
+OUT_DIR=$(pwd)/out
+ARM_TOOL="arm-arago-linux-gnueabi-"
+#定义命令数组
+arry=( mrproper am335x_evm_defconfig menuconfig uImage modules ) #数组下标从0开始
+case $1 in
+0|1|2|3|4)
+echo -e "\033[41;20m####################################################################################\033[0m"
+echo ""
+echo -e "\033[41;20mhzq:cmd is make O=$OUT_DIR ARCH=arm CROSS_COMPILE=$ARM_TOOL ${arry[$1]} .......\033[0m"
+echo ""
+echo -e "\033[41;20m####################################################################################\033[0m"
+echo ""
+make O=$OUT_DIR ARCH=arm CROSS_COMPILE=$ARM_TOOL ${arry[$1]} -j8
+;;
+*)
+echo -e "\033[41;20m cmd is 0=mrproper 1=am335x_evm_defconfig 2=menuconfig 3=uImage 4=modules \033[0m"
+;;
+esac
 
